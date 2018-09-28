@@ -1,0 +1,59 @@
+option, -echo, -warn;
+
+! Call the sequences
+! Here b1 and b2 for ATS round optics, 30 cm beta star, 130 urad
+
+call, file="sequences/round_optics_30_130urad/seqb1.seq";
+call, file="sequences/round_optics_30_130urad/seqb2.seq";
+
+! Macro files
+
+call, file="../macro/macro_bb.madx";
+call, file="../macro/install_wire_comp_in_lhcb2.madx";
+call, file="../macro/footprint.madx"
+
+option, echo, warn;
+
+
+use, sequence=lhcb2;
+twiss;
+
+ON_WIRE := 1;
+
+if(ON_WIRE==1):{
+wire_c_s_l1.b2 = -176.17;
+wire_c_s_r1.b2 = 145.945;
+wire_c_x_l1.b2 = 0;
+wire_c_y_l1.b2 = 0.01;
+wire_c_x_r1.b2 = 0;
+wire_c_y_r1.b2 = 0.01;
+
+wire_c_s_l5.b2 = -150.03;
+wire_c_s_r5.b2 = 147.95;
+wire_c_x_l5.b2 = 0.01;
+wire_c_y_l5.b2 = 0;
+wire_c_x_r5.b2 = 0.01;
+wire_c_y_r5.b2 = 0;
+
+I_wire_c_l1.b2 = 0;
+I_wire_c_l5.b2 = 0;
+I_wire_c_r1.b2 = 0;
+I_wire_c_r5.b2 = 1.81;
+
+if(I_wire_c_l1.b2==0){wire_c_s_l1.b2=0;};
+if(I_wire_c_l5.b2==0){wire_c_s_l5.b2=0;};
+if(I_wire_c_r1.b2==0){wire_c_s_r1.b2=0;};
+if(I_wire_c_r5.b2==0){wire_c_s_r5.b2=0;};
+
+on_off_w_c_l1.b2 := 0;
+on_off_w_c_l5.b2 := 0;
+on_off_w_c_r1.b2 := 0;
+on_off_w_c_r5.b2 := 1;
+
+
+exec, INSTALL_WIRE_COMP_LHCB2;
+};
+
+use, sequence=lhcb2;
+twiss;
+stop;
