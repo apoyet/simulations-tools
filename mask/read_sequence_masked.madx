@@ -1,8 +1,16 @@
 option, -echo, -warn;
-call, file="../";
+
+! Call the sequences
+
+call, file=%MASK_seqB1;
+call, file=%MASK_seqB2;
+
+! Call the macro files
+
 call, file="../macro/macro_bb.madx";
 call, file="../macro/install_wire_comp_in_lhcb2.madx";
 call, file="../macro/footprint.madx"
+
 option, echo, warn;
 
 
@@ -10,6 +18,7 @@ use, sequence=lhcb2;
 twiss;
 
 stop;
+
 ON_WIRE := 1;
 
 if(ON_WIRE==1):{
