@@ -9,6 +9,7 @@ pd=importData.pd     # is the pandas package
 np=importData.np     # is the numpy package
 cals=importData.cals # pytimber log class
 import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 mySource='/eos/user/a/apoyet/SWAN_projects/2018/simulations-tools/python-toolkit/'
 
 # plot parameters
@@ -32,10 +33,11 @@ y = myDynapDF['TUNY'].values
 
 #plot
 
-fig = plt.figure()
-fig.plot(x,y,'o',label=myStudy)
+plt.plot(x,y,'o',label=myStudy)
 plt.xlim(.30,.32)
 plt.ylim(.31,.33)
 plt.title(myTitle)
 plt.legend(loc='best', frameon=True)
-plt.savefig('md4_footprint.pdf', bbox_inches='tight')
+plt.tight_layout()
+plt.savefig('md4_footprint.pdf', dpi=300)
+plt.show()
