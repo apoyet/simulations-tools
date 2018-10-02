@@ -2,8 +2,8 @@ option, -echo, -warn;
 
 ! Call the sequences
 
-call, file=%MASK_seqB1;
-call, file=%MASK_seqB2;
+call, file=%MASKED_seqB1;
+call, file=%MASKED_seqB2;
 
 ! Call the macro files
 
