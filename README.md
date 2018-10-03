@@ -14,7 +14,7 @@ Be careful to add a SSH publickey in your own machine (under ~/.ssh).
 ## A first example
 In order to run you're first example, please run, from the main repo:
 ```
-madx<mask/first_example.madx
+madx<mask/dummy_examples/first_example.madx
 ```
 This example will call two sequences, corresponding to the two beams in the LHC (ATS Round Optics, 30 cm, 130 urad) and will install a wire on B2. See the effect on the tune. 
 
