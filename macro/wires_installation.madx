@@ -135,7 +135,7 @@ y_dist_sig_bbcw.b2 = y_bbcw.b1/sqrt(table(twiss, mar_bbcw.b2, sig33));
 
 ! current
 
-n_bbcw.b1 = I_bbcw.b2/(qelect*clight*beam%lhcb2->npart);
+n_bbcw.b2 = I_bbcw.b2/(qelect*clight*beam%lhcb2->npart);
 
 
 !======= INSTALL THE WIRE ========!
