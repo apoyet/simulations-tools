@@ -4,6 +4,7 @@ option, -echo, -warn;
 ! Here b1 and b2 for ATS round optics, 30 cm beta star, 130 urad
 
 call, file="../sequences/round_optics_30_130urad/seqb1.seq";
+call, file="../sequences/round_optics_30_130urad/seqb2.seq";
 
 ! Macro files
 
@@ -11,6 +12,7 @@ call, file="../../macro/wires_installation.madx";
 
 option, echo, warn;
 
+! FOR BEAM 1
 
 use, sequence=lhcb1;
 twiss;
@@ -28,4 +30,26 @@ exec, INSTALL_WIRE_C_B1(bbwire_c_r5.b1, s_wire_r5.b1, x_wire_r5.b1, y_wire_r5.b1
 
 use, sequence=lhcb1;
 twiss;
+
+
+! FOR BEAM 2
+
+use, sequence=lhcb2;
+twiss;
+
+! want to install @ 150 m from IP5
+
+sIP5 = table(twiss, ip5, s);
+
+x_wire_r5.b2 = -0.01; !external
+y_wire_r5.b2 = 0;
+s_wire_r5.b2 = sIP5+150;
+I_wire_r5.b2 = 350;
+
+exec, INSTALL_WIRE_C_B2(bbwire_c_r5.b2, s_wire_r5.b2, x_wire_r5.b2, y_wire_r5.b2, I_wire_r5.b2);
+
+use, sequence=lhcb2;
+twiss;
+
+
 stop;
