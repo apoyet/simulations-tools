@@ -9,7 +9,13 @@ In order to work with the simulations-tools package, please clone the project in
 git clone git@github.com:apoyet/simulations-tools.git
 ```
 
-Be careful to add a SSH publickey in your own machine (under ~/.ssh).
+Please add a SSH publickey in your own machine (under ~/.ssh). You can use the command 
+
+```
+ssh-keygen -t rsa
+```
+
+and upload the key on your github profile. In the upper-right corner of any page, click your profile photo, then click Settings. In the user settings sidebar, click SSH and GPG keys and follow the instructions.
 
 ## A first example
 In order to run you're first example, please run, from the main repo:
