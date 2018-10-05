@@ -8,9 +8,9 @@ call, file="../sequences/round_optics_30_130urad/seqb2.seq";
 
 ! Macro files
 
-call, file="../macro/macro_bb.madx";
-call, file="../macro/install_wire_comp_in_lhcb2.madx";
-call, file="../macro/footprint.madx"
+call, file="../../macro/macro_bb.madx";
+call, file="../../macro/install_wire_comp_in_lhcb2.madx";
+call, file="../../macro/footprint.madx"
 
 option, echo, warn;
 
