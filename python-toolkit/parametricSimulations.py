@@ -119,3 +119,14 @@ def writeMADXCommand(df,executable='/eos/user/s/sterbini/MD_ANALYSIS/MADX/madx-l
 def runCommand(df):
     os.system(df.command)
     return df.command
+
+def unmaskSequenceMaker(myFile, myMaskedParam, myParams, myStudyFolder):
+    searchFile = open(myFile, 'r')
+    myUnmaskedFile = ''
+    for line in searchFile:
+        for param in myMaskedParam:
+            line = line.replace(param, str(myParams[param]))
+        myUnmaskedFile = myUnmaskedFile+line
+    text_file = open(myStudyFolder+'unmasked_sequence/sequence_maker.madx',"w")
+    text_file.write(myUnmaskedFile)
+    text_file.close()
