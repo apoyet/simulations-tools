@@ -18,9 +18,10 @@ ssh-keygen -t rsa
 and upload the key on your github profile. In the upper-right corner of any page, click your profile photo, then click Settings. In the user settings sidebar, click SSH and GPG keys and follow the instructions.
 
 ## A first example
-In order to run you're first example, please run, from the main repo:
+In order to run your first example, please go first in the repo 'mask' and run the madx input file:
 ```
-madx<mask/dummy_examples/first_example.madx
+cd mask
+madx<dummy_examples/first_example.madx
 ```
 This example will call two sequences, corresponding to the two beams in the LHC (ATS Round Optics, 30 cm, 130 urad) and will install a wire on B2. See the effect on the tune. 
 
