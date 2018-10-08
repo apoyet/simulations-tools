@@ -3,14 +3,14 @@ option, -echo, -warn;
 ! Call the sequences
 ! Here b1 and b2 for ATS round optics, 30 cm beta star, 130 urad
 
-call, file="../sequences/round_optics_30_130urad/seqb1.seq";
-call, file="../sequences/round_optics_30_130urad/seqb2.seq";
+call, file="sequences/round_optics_30_130urad/seqb1.seq";
+call, file="sequences/round_optics_30_130urad/seqb2.seq";
 
 ! Macro files
 
-call, file="../../macro/macro_bb.madx";
-call, file="../../macro/install_wire_comp_in_lhcb2.madx";
-call, file="../../macro/footprint.madx"
+call, file="../macro/macro_bb.madx";
+call, file="../macro/install_wire_comp_in_lhcb2.madx";
+call, file="../macro/footprint.madx"
 
 option, echo, warn;
 
