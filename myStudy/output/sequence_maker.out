@@ -1,0 +1,41 @@
+
+  ++++++++++++++++++++++++++++++++++++++++++++
+  +     MAD-X 5.04.01  (64 bit, Linux)       +
+  + Support: mad@cern.ch, http://cern.ch/mad +
+  + Release   date: 2018.07.10               +
+  + Execution date: 2018.10.09 16:22:12      +
+  ++++++++++++++++++++++++++++++++++++++++++++
+! lhc2016_ats_v4.mask  ---  from Yannis
+
+! S. Fartoukh March 2009
+
+! Ref sample job for tracking with multipole field imperfection in nominal
+
+! LHC magnets using V6.503 in collision
+
+! M. Giovannozzi November 2010
+
+
+
+!---|----1----|----2----|----3----|----4----|----5----|----6----|----7----|---8;
+
+Option,  warn,info;
+
+System,"rm -rf temp";
+
+System,"mkdir temp";
+
+system,"ln -fns /afs/cern.ch/eng/lhc/optics/runII/2018 db5";
+
+system,"ln -fns /afs/cern.ch/eng/lhc/optics/runII/2017 db6"; ! just because there is no errors dir in 2018 yet
+
+system,"ln -fns /afs/cern.ch/eng/lhc/optics/errors/0705 wise";
+
+system,"ln -fns /afs/cern.ch/eng/lhc/optics/V6.503/WISE/After_sector_3-4_repair fidel";
+
+System,"ln -fns /afs/cern.ch/eng/lhc/optics/HLLHCV1.0 slhc";
+
+
+
+option,-echo,-info;
+
