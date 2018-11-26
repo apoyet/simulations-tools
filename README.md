@@ -17,6 +17,12 @@ ssh-keygen -t rsa
 
 and upload the key on your github profile. In the upper-right corner of any page, click your profile photo, then click Settings. In the user settings sidebar, click SSH and GPG keys and follow the instructions.
 
+To download the updates of the remote repository please move to the main repository folder and use the command:
+
+```
+git pull
+```
+
 ## A first example
 In order to run your first example, please go first in the repo 'mask' and run the madx input file:
 ```
